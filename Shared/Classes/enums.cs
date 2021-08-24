@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace Classes.Enums 
+namespace Classes.Enums
 {
     public enum CsvStringsEnum
     {

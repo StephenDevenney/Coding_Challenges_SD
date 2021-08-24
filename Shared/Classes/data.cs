@@ -1,6 +1,4 @@
-using System.ComponentModel;
-
-namespace Classes.Data 
+namespace Classes.Data
 {
     public static class Data 
     {

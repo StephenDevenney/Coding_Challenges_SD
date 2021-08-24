@@ -46,3 +46,10 @@ C:\Coding\Coding_Challenges\Sample_Challenges\CsvRemoveNullRow\obj\Debug\net5.0\
 C:\Coding\Coding_Challenges\Sample_Challenges\CsvRemoveNullRow\obj\Debug\net5.0\ref\CsvRemoveNullRow.dll
 C:\Coding\Coding_Challenges\Sample_Challenges\CsvRemoveNullRow\obj\Debug\net5.0\CsvRemoveNullRow.pdb
 C:\Coding\Coding_Challenges\Sample_Challenges\CsvRemoveNullRow\obj\Debug\net5.0\CsvRemoveNullRow.genruntimeconfig.cache
+C:\Coding\Coding_Challenges\Sample_Challenges\CsvRemoveNullRow\bin\Debug\net5.0\Shared.deps.json
+C:\Coding\Coding_Challenges\Sample_Challenges\CsvRemoveNullRow\bin\Debug\net5.0\Shared.runtimeconfig.json
+C:\Coding\Coding_Challenges\Sample_Challenges\CsvRemoveNullRow\bin\Debug\net5.0\Shared.runtimeconfig.dev.json
+C:\Coding\Coding_Challenges\Sample_Challenges\CsvRemoveNullRow\bin\Debug\net5.0\Shared.exe
+C:\Coding\Coding_Challenges\Sample_Challenges\CsvRemoveNullRow\bin\Debug\net5.0\Shared.dll
+C:\Coding\Coding_Challenges\Sample_Challenges\CsvRemoveNullRow\bin\Debug\net5.0\Shared.pdb
+C:\Coding\Coding_Challenges\Sample_Challenges\CsvRemoveNullRow\obj\Debug\net5.0\CsvRemoveNullRow.csproj.CopyComplete
