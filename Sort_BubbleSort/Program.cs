@@ -35,6 +35,7 @@ namespace Sort_BubbleSort
         static int[] bubbleSort(int[] intArray)
         {
             StopWatchHandler stopwatch = new StopWatchHandler();
+            Console.WriteLine("Timer Started => Sorting");
             stopwatch.StartStopWatch();
             
             for (int i=0; i < intArray.Length-1; i++)
