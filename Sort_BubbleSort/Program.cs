@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Linq;
-using System.Timers;
 using Classes.Data;
+using Classes.LargeData;
 using Classes.StopWatch;
 
 namespace Sort_BubbleSort
@@ -17,19 +16,19 @@ namespace Sort_BubbleSort
 		    */
 
             // Call Solution
-            foreach (int[] intArray in Data.UnsortedData)
+            foreach (int[] intArray in LargeData.UnsortedData)
             {
                 Console.WriteLine(Solution(intArray));
             }
         }
 
         #region SOLUTION
-        static string Solution(int[] unsortedData)
+        static string Solution(int[] dataToSort)
 	    {
             // Print Unsorted Array
-            Console.WriteLine("\nUnsorted: " + ArrayToString(unsortedData));
+            Console.WriteLine("\nUnsorted: " + ArrayToString(dataToSort));
             // Sort Array
-            int[] sortedArray = bubbleSort(unsortedData);
+            int[] sortedArray = bubbleSort(dataToSort);
             // Return Text
             return "Sorted: " + ArrayToString(sortedArray) + "\n------------------";
 	    }

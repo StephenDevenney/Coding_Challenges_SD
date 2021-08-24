@@ -15,9 +15,9 @@ namespace Classes.StopWatch
         {
             stopwatch.Stop();
         }
-        public double GetTime()
+        public TimeSpan GetTime()
         {
-            return stopwatch.Elapsed.TotalMilliseconds;
+            return stopwatch.Elapsed;
         }
         public void ResetStopWatch()
         {
