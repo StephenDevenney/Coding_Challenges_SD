@@ -1,9 +1,6 @@
 .vscode
-/CsvRemoveNullRow/bin
-/CsvRemoveNullRow/bin/*
-
 */bin
-*/bin/*
+*/obj/Debug
 
 
 
