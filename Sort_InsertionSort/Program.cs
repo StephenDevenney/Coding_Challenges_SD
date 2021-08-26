@@ -19,10 +19,9 @@ namespace Sort_InsertionSort
 		    */
 
             // Call Solution
-            foreach (int[] intArray in LargeData.SortedData)
+            foreach (int[] intArray in Data.UnsortedData)
             {
-                // Console.WriteLine(Solution(intArray));
-                Solution(intArray);
+                Console.WriteLine(Solution(intArray));
             }
         }
 
@@ -30,7 +29,7 @@ namespace Sort_InsertionSort
         static string Solution(int[] dataToSort)
 	    {
             // Print Unsorted Array
-            // Console.WriteLine("\nUnsorted: " + ArrayToString(dataToSort));
+            Console.WriteLine("\nUnsorted: " + ArrayToString(dataToSort));
             // Sort Array
             int[] sortedArray = SelectionSort(dataToSort);
             // Return Text
@@ -39,7 +38,7 @@ namespace Sort_InsertionSort
         static int[] SelectionSort(int[] intArray)
         {
             StopWatchHandler stopwatch = new StopWatchHandler();
-            // Console.WriteLine("Timer Started => Sorting");
+            Console.WriteLine("Timer Started => Sorting");
             stopwatch.StartStopWatch();
             
             for(int i=1; i < intArray.Length; i++) {
