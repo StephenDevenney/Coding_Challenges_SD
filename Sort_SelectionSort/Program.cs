@@ -13,6 +13,9 @@ namespace Sort_SelectionSort
 			    Problem: Sort through array of int using Selection Sort Algorithm.
 
 			    int arrays are fed in through a static class in the classes folder.
+                
+                20 Elements => Data.UnsortedData, Data.UnsortedDataRepeated, Data.SortedData,
+                100,000 Elements => LargeData.UnsortedData, LargeData.UnsortedDataRepeated, LargeData.SortedData.
 		    */
 
             // Call Solution
