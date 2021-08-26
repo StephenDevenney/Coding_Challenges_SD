@@ -19,9 +19,10 @@ namespace Sort_QuickSort
 		    */
 
             // Call Solution
-            foreach (int[] intArray in Data.UnsortedData)
+            foreach (int[] intArray in LargeData.SortedData)
             {
-                Console.WriteLine(Solution(intArray));
+                // Console.WriteLine(Solution(intArray));
+                Solution(intArray);
             }
         }
 
@@ -29,10 +30,10 @@ namespace Sort_QuickSort
         static string Solution(int[] dataToSort)
 	    {
             // Print Unsorted Array
-            Console.WriteLine("\nUnsorted: " + ArrayToString(dataToSort));
+            // Console.WriteLine("\nUnsorted: " + ArrayToString(dataToSort));
             // Sort Array
-            StopWatchHandler stopwatch = new StopWatchHandler();
-            Console.WriteLine("Timer Started => Sorting");
+            StopWatchHandler stopwatch = new();
+            // Console.WriteLine("Timer Started => Sorting");
             stopwatch.StartStopWatch();
 
             int[] sortedArray = QuickSort(dataToSort, 0, dataToSort.Length-1);
@@ -45,30 +46,58 @@ namespace Sort_QuickSort
 	    }
         static int[] QuickSort(int[] intArray, int left, int right)
         {
-            if (left < right) {
-                int pivotIndex = Pivot(intArray, left, right);
-                QuickSort(intArray, left, pivotIndex-1);
-                QuickSort(intArray, pivotIndex+1, right);
+            int startIndex = 0;
+            int endIndex = intArray.Length-1;
+            int top = -1;
+            int[] stack = new int[intArray.Length];
+
+            stack[++top] = startIndex;
+            stack[++top] = endIndex;
+
+            while (top >= 0)
+            {
+                endIndex = stack[top--];
+                startIndex = stack[top--];
+
+                int p = Partition(intArray, startIndex, endIndex);
+
+                if (p-1 > startIndex)
+                {
+                    stack[++top] = startIndex;
+                    stack[++top] = p - 1;
+                }
+
+                if (p + 1 < endIndex)
+                {
+                    stack[++top] = p+1;
+                    stack[++top] = endIndex;
+                }
             }
 
             return intArray;
         }
 
-        static int Pivot(int[] intArray, int left, int right) {
-            int shift = left;
-            for (int i = left+1; i <= right; i++) {
-                if (intArray[i] < intArray[left])
-                    Swap(intArray, i, ++shift);
+        static int Partition(int[] intArray, int left, int right) {
+            int x = intArray[right];
+	        int i = (left-1);
+            for (int j = left; j <= right - 1; ++j)
+            {
+                if (intArray[j] <= x)
+                {
+                    ++i;
+                    Swap(intArray[i], intArray[j]);
+                }
             }
 
-            Swap(intArray, left, shift);
-            return shift;
+	        Swap(intArray[i+1], intArray[right]);
+
+	        return (i + 1);
         }
 
-        static void Swap(int[] intArray, int left, int right) {
-            int temp = intArray[left];
-            intArray[left] = intArray[right];
-            intArray[right] = temp;
+        static void Swap(int x, int y) {
+            int temp = x;
+            x = y;
+            y = temp;
         }
 
         static string ArrayToString(int[] intArray)
