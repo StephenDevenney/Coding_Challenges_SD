@@ -16,13 +16,14 @@ namespace Sort_QuickSort
 
                 20 Elements => Data.UnsortedData, Data.UnsortedDataRepeated, Data.SortedData,
                 100,000 Elements => LargeData.UnsortedData, LargeData.UnsortedDataRepeated, LargeData.SortedData.
+
+                TODO: Fix
 		    */
 
             // Call Solution
-            foreach (int[] intArray in LargeData.SortedData)
+            foreach (int[] intArray in Data.UnsortedData)
             {
-                // Console.WriteLine(Solution(intArray));
-                Solution(intArray);
+                Console.WriteLine(Solution(intArray));
             }
         }
 
@@ -30,22 +31,19 @@ namespace Sort_QuickSort
         static string Solution(int[] dataToSort)
 	    {
             // Print Unsorted Array
-            // Console.WriteLine("\nUnsorted: " + ArrayToString(dataToSort));
+            Console.WriteLine("\nUnsorted: " + ArrayToString(dataToSort));
             // Sort Array
-            StopWatchHandler stopwatch = new();
-            // Console.WriteLine("Timer Started => Sorting");
-            stopwatch.StartStopWatch();
-
             int[] sortedArray = QuickSort(dataToSort, 0, dataToSort.Length-1);
-
-            stopwatch.StopStopWatch();
-            Console.WriteLine(stopwatch.GetTime());
 
             // Return Text
             return "Sorted: " + ArrayToString(sortedArray) + "\n------------------";
 	    }
         static int[] QuickSort(int[] intArray, int left, int right)
         {
+            StopWatchHandler stopwatch = new();
+            Console.WriteLine("Timer Started => Sorting");
+            stopwatch.StartStopWatch();
+
             int startIndex = 0;
             int endIndex = intArray.Length-1;
             int top = -1;
@@ -74,22 +72,30 @@ namespace Sort_QuickSort
                 }
             }
 
+            stopwatch.StopStopWatch();
+            Console.WriteLine(stopwatch.GetTime());
             return intArray;
         }
 
         static int Partition(int[] intArray, int left, int right) {
             int x = intArray[right];
 	        int i = (left-1);
+            int temp = 0;
+
             for (int j = left; j <= right - 1; ++j)
             {
                 if (intArray[j] <= x)
                 {
                     ++i;
-                    Swap(intArray[i], intArray[j]);
+                    temp = intArray[i];
+                    intArray[i] = intArray[j];
+                    intArray[j] = temp;
                 }
             }
 
-	        Swap(intArray[i+1], intArray[right]);
+            temp = intArray[i+1];
+            intArray[i+1] = intArray[right];
+            intArray[right] = temp;
 
 	        return (i + 1);
         }
