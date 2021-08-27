@@ -19,10 +19,9 @@ namespace Sort_MergeSort
 		    */
 
             // Call Solution
-            foreach (int[] intArray in LargeData.SortedData)
+            foreach (int[] intArray in LargeData.UnsortedData)
             {
-                // Console.WriteLine(Solution(intArray));
-                Solution(intArray);
+                Console.WriteLine(Solution(intArray));
             }
         }
 
@@ -30,10 +29,10 @@ namespace Sort_MergeSort
         static string Solution(int[] dataToSort)
 	    {
             // Print Unsorted Array
-            // Console.WriteLine("\nUnsorted: " + ArrayToString(dataToSort));
+            Console.WriteLine("\nUnsorted: " + ArrayToString(dataToSort));
             // Sort Array
             StopWatchHandler stopwatch = new();
-            // Console.WriteLine("Timer Started => Sorting");
+            Console.WriteLine("Timer Started => Sorting");
             stopwatch.StartStopWatch();
 
             int[] sortedArray = MergeSort(dataToSort);
