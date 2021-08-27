@@ -17,4 +17,4 @@ Navigate to specific project folder in console.
 dotnet run
 ```
 ## Sorting Results
-Sorting results are kept in a csv file in the shared project.
+Sorting time results are kept in a csv file in the shared project.
