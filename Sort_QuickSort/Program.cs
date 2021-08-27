@@ -16,8 +16,6 @@ namespace Sort_QuickSort
 
                 20 Elements => Data.UnsortedData, Data.UnsortedDataRepeated, Data.SortedData,
                 100,000 Elements => LargeData.UnsortedData, LargeData.UnsortedDataRepeated, LargeData.SortedData.
-
-                TODO: Fix
 		    */
 
             // Call Solution
@@ -34,7 +32,6 @@ namespace Sort_QuickSort
             Console.WriteLine("\nUnsorted: " + ArrayToString(dataToSort));
             // Sort Array
             int[] sortedArray = QuickSort(dataToSort, 0, dataToSort.Length-1);
-
             // Return Text
             return "Sorted: " + ArrayToString(sortedArray) + "\n------------------";
 	    }
